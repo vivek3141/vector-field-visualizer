@@ -19,12 +19,12 @@ def plot_color(fx, fy, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0):
     for y in range(bound_y[0] - 1, bound_y[1] + 1, skip):
         for x in range(bound_x[0] - 1, bound_y[1] + 1, skip):
             v = int(math.sqrt(x ** 2 + y ** 2) / 10 ** prop)
-            index = len(color_list)-1 if v > len(color_list)-1 else v
+            index = len(color_list) - 1 if v > len(color_list) - 1 else v
             c = color_list[index]
             plt.scatter([x], [y], c=c, s=[10])
             x_val = fx(x, y)
             y_val = fy(x, y)
-            angle = math.atan(y_val/x_val) if x_val < 0 else math.atan(y_val/x_val) + math.pi
+            angle = math.atan(y_val / x_val) if x_val < 0 else math.atan(y_val / x_val) + math.pi
             plt.arrow(x, y, x_val, y_val,
                       head_width=0.5, head_length=0.5, color=c)
     plt.show()
