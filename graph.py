@@ -12,6 +12,7 @@ def plot(fx, fy, bound_x=(-10, 10), bound_y=(-10, 10), skip=1):
             plt.scatter([x], [y], c=c, s=[10])
             plt.arrow(x, y, fx(x, y), fy(x, y),
                       head_width=0.5, head_length=0.5, color=c)
+    plt.savefig("vector_field.jpg")
     plt.show()
 
 
@@ -27,6 +28,7 @@ def plot_color(fx, fy, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0):
             angle = math.atan(y_val / x_val) if x_val < 0 else math.atan(y_val / x_val) + math.pi
             plt.arrow(x, y, x_val, y_val,
                       head_width=0.5, head_length=0.5, color=c)
+    plt.savefig("vector_field.jpg")
     plt.show()
 
 
