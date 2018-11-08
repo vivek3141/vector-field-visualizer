@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import math
+import numpy as np
 
 color_list = ['#e22b2b', '#e88e10', '#eae600', '#88ea00',
               '#00eae2', '#0094ea', "#2700ea", '#bf00ea', '#ea0078']
@@ -25,8 +26,23 @@ def plot_color(fx, fy, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0):
             plt.scatter([x], [y], c=c, s=[10])
             x_val = fx(x, y)
             y_val = fy(x, y)
-            angle = math.atan(y_val / x_val) if x_val < 0 else math.atan(y_val / x_val) + math.pi
-            plt.arrow(x, y, x_val, y_val,
+            """root = np.roots([2, -2 * x_val - 2 * y_val, -1 + np.power(x_val, 2) + np.power(y_val, 2)])
+            print(root)"""
+            try:
+                angle = math.atan(y_val / x_val) if x_val > 0 else (math.atan(y_val / x_val) + math.pi)
+            except ZeroDivisionError:
+                angle=0
+            """i = 0
+            dx = 0
+            dy = 0
+            while round(math.pow(dx, 2) + math.pow(dy, 2)) != 1:
+                if i == len(root):
+                    break
+                dx = math.fabs(x_val-float(root[i])) if x_val >= 0 else -1*math.fabs(x_val-float(root[i]))
+                dy = math.fabs(y_val-float(root[i])) if y_val >= 0 else -1*math.fabs(y_val-float(root[i]))
+                i += 1"""
+
+            plt.arrow(x, y, math.cos(angle), math.sin(angle),
                       head_width=0.5, head_length=0.5, color=c)
     plt.savefig("vector_field.jpg")
     plt.show()
