@@ -32,15 +32,7 @@ def plot_color(fx, fy, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0):
                 angle = math.atan(y_val / x_val) if x_val > 0 else (math.atan(y_val / x_val) + math.pi)
             except ZeroDivisionError:
                 angle=0
-            """i = 0
-            dx = 0
-            dy = 0
-            while round(math.pow(dx, 2) + math.pow(dy, 2)) != 1:
-                if i == len(root):
-                    break
-                dx = math.fabs(x_val-float(root[i])) if x_val >= 0 else -1*math.fabs(x_val-float(root[i]))
-                dy = math.fabs(y_val-float(root[i])) if y_val >= 0 else -1*math.fabs(y_val-float(root[i]))
-                i += 1"""
+
 
             plt.arrow(x, y, math.cos(angle), math.sin(angle),
                       head_width=0.5, head_length=0.5, color=c)
