@@ -26,8 +26,6 @@ def plot_color(fx, fy, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0):
             plt.scatter([x], [y], c=c, s=[10])
             x_val = fx(x, y)
             y_val = fy(x, y)
-            """root = np.roots([2, -2 * x_val - 2 * y_val, -1 + np.power(x_val, 2) + np.power(y_val, 2)])
-            print(root)"""
             try:
                 angle = math.atan(y_val / x_val) if x_val > 0 else (math.atan(y_val / x_val) + math.pi)
             except ZeroDivisionError:
