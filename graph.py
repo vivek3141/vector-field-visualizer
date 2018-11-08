@@ -31,8 +31,7 @@ def plot_color(fx, fy, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0):
             try:
                 angle = math.atan(y_val / x_val) if x_val > 0 else (math.atan(y_val / x_val) + math.pi)
             except ZeroDivisionError:
-                angle=0
-
+                angle = 0
 
             plt.arrow(x, y, math.cos(angle), math.sin(angle),
                       head_width=0.5, head_length=0.5, color=c)
