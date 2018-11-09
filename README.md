@@ -1,2 +1,4 @@
-# vector-field-visualizer
-A python program to visualize a two dimensional vector field, and to calculate divergence and curl at any point.
+# Vector Field Visualizer
+A python program to visualize a two dimensional 
+vector field, and to calculate divergence and curl 
+at any point.
