@@ -10,8 +10,8 @@ app = Flask(__name__)
 def get_graph():
     fx = request.args.get('fx')
     fy = request.args.get('fy')
-    t.graph_color(fx,fy, skip=2)
-    return send_file("./vector_field.jpg")
+    t.graph_color(fx, fy, skip=2)
+    return send_file("./vector-field/vector_field.jpg")
 
 
 app.run()
