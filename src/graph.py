@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import math
-import numpy as np
 
 color_list = ['#e22b2b', '#e88e10', '#eae600', '#88ea00',
               '#00eae2', '#0094ea', "#2700ea", '#bf00ea', '#ea0078']
