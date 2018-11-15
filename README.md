@@ -16,4 +16,12 @@ python3 main.py [fx] [fy] --mode [mode] --skip [skip] \
 --boundx [boundx] --boundy [boundy] --prop [prop] --head_size [head_size]
 ```
 #### --mode
-Set mode to 
+Set mode to COLOR to use color to portray length instead of actual length.
+#####--prop
+Use prop to adjust the length for which the color should change.
+<br><br>
+Set mode to BLACK to use actual length.
+#### Examples
+<img src="https://raw.githubusercontent.com/vivek3141/vector-field-visualizer/master/img/color.jpg" height=240><br>
+<img src="https://raw.githubusercontent.com/vivek3141/vector-field-visualizer/master/img/blackwhite.jpg" height=240>
+
