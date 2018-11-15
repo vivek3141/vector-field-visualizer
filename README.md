@@ -22,6 +22,6 @@ Use prop to adjust the length for which the color should change.
 <br><br>
 Set mode to BLACK to use actual length.
 #### Examples
-<img src="https://raw.githubusercontent.com/vivek3141/vector-field-visualizer/master/img/color.jpg" height=240><br>
+<img src="https://raw.githubusercontent.com/vivek3141/vector-field-visualizer/master/img/color.jpg" height=240>
 <img src="https://raw.githubusercontent.com/vivek3141/vector-field-visualizer/master/img/blackwhite.jpg" height=240>
 
