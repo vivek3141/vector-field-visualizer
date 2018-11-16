@@ -6,12 +6,12 @@ color_list = ['#e22b2b', '#e88e10', '#eae600', '#88ea00',
 
 
 def plot(fx, fy, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, head_size=0.5):
+    c = "#0F0F0F"
     for y in range(bound_y[0] - 1, bound_y[1] + 1, skip):
         for x in range(bound_x[0] - 1, bound_y[1] + 1, skip):
-            c = "#0F0F0F"
             plt.scatter([x], [y], c=c, s=[10])
             plt.arrow(x, y, fx(x, y), fy(x, y),
-                      head_width=0.5, head_length=0.5, color=c)
+                      head_width=head_size, head_length=head_size, color=c)
     plt.savefig("vector_field.jpg")
     plt.show()
 
