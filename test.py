@@ -1,3 +1,4 @@
-import take_function as t
-
-t.graph("x", "y", skip=2, head_size=0.25)
+from visualizer import Visualizer
+v = Visualizer("x*y+1", "y+x")
+v.plot_color(skip=2)
+print(v.div(1,2))
