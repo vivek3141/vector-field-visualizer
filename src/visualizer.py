@@ -23,11 +23,11 @@ class Visualizer:
                 plt.scatter([x], [y], c=c, s=[10])
                 plt.arrow(x, y, self.fx(x, y), self.fy(x, y),
                           head_width=head_size, head_length=head_size, color=c)
-        plt.savefig("vector_field.jpg")
+        plt.savefig("vector_field.png")
 
     def plot_color(self, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0, head_size=0.5):
-        for y in range(bound_y[0] - 1, bound_y[1] + 1, skip):
-            for x in range(bound_x[0] - 1, bound_y[1] + 1, skip):
+        for y in range(bound_y[0], bound_y[1] + 1, skip):
+            for x in range(bound_x[0], bound_y[1] + 1, skip):
                 v = int(math.sqrt(x ** 2 + y ** 2) / 10 ** prop)
                 index = len(self.color_list) - 1 if v > len(self.color_list) - 1 else v
                 c = self.color_list[index]
@@ -39,6 +39,9 @@ class Visualizer:
                     plt.arrow(x, y, math.cos(angle), math.sin(angle),
                               head_width=head_size, head_length=head_size, color=c)
                 except ZeroDivisionError:
-                    plt.arrow(x, y, 0, y_val/math.fabs(y_val), head_width=head_size, head_length=head_size, color=c)
+                    try:
+                        plt.arrow(x, y, 0, y_val/math.fabs(y_val), head_width=head_size, head_length=head_size, color=c)
+                    except ZeroDivisionError:
+                        plt.scatter([x], [y], color=c, s=[10])
 
-        plt.savefig("vector_field.jpg")
+        plt.savefig("vector_field.png")

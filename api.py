@@ -4,6 +4,7 @@ from flask import request
 from flask import send_file
 from flask_cors import CORS
 import os
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -16,7 +17,8 @@ def get_graph():
     skip = request.args.get('skip')
     v = Visualizer(f_x=str(fx), f_y=str(fy))
     v.plot_color(skip=int(skip))
-    return send_file("./vector_field.jpg")
+    time.sleep(0.5)
+    return send_file("./vector_field.png")
 
 
 if __name__ == "__main__":

@@ -32,5 +32,5 @@ def plot_color(fx, fy, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0, hea
 
             plt.arrow(x, y, math.cos(angle), math.sin(angle),
                       head_width=head_size, head_length=head_size, color=c)
-    plt.savefig("vector_field.jpg")
+    plt.savefig("vector_field.png")
     plt.show()
