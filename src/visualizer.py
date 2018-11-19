@@ -24,7 +24,6 @@ class Visualizer:
                 plt.arrow(x, y, self.fx(x, y), self.fy(x, y),
                           head_width=head_size, head_length=head_size, color=c)
         plt.savefig("vector_field.jpg")
-        plt.show()
 
     def plot_color(self, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0, head_size=0.5):
         for y in range(bound_y[0] - 1, bound_y[1] + 1, skip):
@@ -43,4 +42,3 @@ class Visualizer:
                     plt.arrow(x, y, 0, y_val/math.fabs(y_val), head_width=head_size, head_length=head_size, color=c)
 
         plt.savefig("vector_field.jpg")
-        plt.show()
