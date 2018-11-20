@@ -16,8 +16,9 @@ def get_graph():
     fy = request.args.get('fy')
     skip = request.args.get('skip')
     v = Visualizer(f_x=str(fx), f_y=str(fy))
-    v.plot_color(skip=int(skip))
-    time.sleep(0.5)
+    plt = v.plot_color(skip=int(skip))
+    plt.savefig("vector_field.png")
+    plt.gcf.clear()
     return send_file("./vector_field.png")
 
 
