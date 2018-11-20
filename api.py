@@ -18,7 +18,7 @@ def get_graph():
     v = Visualizer(f_x=str(fx), f_y=str(fy))
     plt = v.plot_color(skip=int(skip))
     plt.savefig("vector_field.png")
-    plt.gcf.clear()
+    plt.gcf().clear()
     return send_file("./vector_field.png")
 
 
