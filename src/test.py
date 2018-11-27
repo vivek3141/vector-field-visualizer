@@ -1,5 +1,5 @@
 from visualizer import Visualizer
 
-v = Visualizer("x*y+1", "y+x")
-plt = v.plot_color(skip=2)
+v = Visualizer("cos(x)", "sin(y)")
+plt = v.plot_color(skip=1)
 plt.show()
