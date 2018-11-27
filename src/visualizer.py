@@ -1,4 +1,5 @@
 from math import *
+import numpy as np
 import math
 import matplotlib.pyplot as plt
 
@@ -16,24 +17,26 @@ class Visualizer:
     def curl(self, x, y, d=0.0001):
         return round(((self.fy(x + d, y) - self.fy(x, y)) / d) - ((self.fx(x, y + d) - self.fx(x, y)) / d), 3)
 
-    def plot(self, bound_x=(-10, 10), bound_y=(-10, 10), skip=1):
+    def plot(self, bound=(-10, 10), skip=1):
         c = "#0F0F0F"
-        head_size = (math.fabs(bound_x[0]) + math.fabs(bound_x[1]))/40
-        for y in range(bound_y[0] - 1, bound_y[1] + 1, skip):
-            for x in range(bound_x[0] - 1, bound_y[1] + 1, skip):
-                plt.scatter([x], [y], c=c, s=[10])
+        space = np.append(np.arange(bound[0], bound[1], skip), [bound[1]])
+        head_size = (math.fabs(bound[0]) + math.fabs(bound[1]))/40
+        for y in space:
+            for x in space:
+                plt.scatter([x], [y], c=c, s=[5/head_size])
                 plt.arrow(x, y, self.fx(x, y), self.fy(x, y),
                           head_width=head_size, head_length=head_size, color=c)
         return plt
 
-    def plot_color(self, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0):
-        head_size = (math.fabs(bound_x[0]) + math.fabs(bound_x[1])) / 40
-        for y in range(bound_y[0], bound_y[1] + 1, skip):
-            for x in range(bound_x[0], bound_y[1] + 1, skip):
+    def plot_color(self, bound=(-10, 10), skip=1, prop=0):
+        head_size = (math.fabs(bound[0]) + math.fabs(bound[1])) / 40
+        space = np.append(np.arange(bound[0], bound[1], skip), [bound[1]])
+        for y in space:
+            for x in space:
                 v = int(math.sqrt(x ** 2 + y ** 2) / 10 ** prop)
                 index = len(self.color_list) - 1 if v > len(self.color_list) - 1 else v
                 c = self.color_list[index]
-                plt.scatter([x], [y], c=c, s=[10])
+                plt.scatter([x], [y], c=c, s=[5/head_size])
                 x_val = self.fx(x, y)
                 y_val = self.fy(x, y)
                 try:
