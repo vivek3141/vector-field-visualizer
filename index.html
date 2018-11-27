@@ -3,20 +3,9 @@
 <title>Vector Field Visualizer</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    body, h1, h2, h3, h4, h5, h6 {
-        font-family: "Lato", sans-serif;
-    }
-
-    body, html {
-        height: 100%;
-        color: #777;
-        line-height: 1.8;
-    }
-</style>
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
 <body background="img/gravel.png">
 <br>
 <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">VECTOR <span
@@ -36,6 +25,13 @@
                 <h4>F<sub>y</sub></h4>
                 <input class="w3-input w3-border" type="text" value="sin(y)" id="Fy">
             </div>
+            <div class="w3-half">
+                <h4>Skip</h4>
+                <input class="w3-input w3-border" type="text" value="2" id="skip">
+            </div>
+            <div class="w3-half"><h4>Bounds</h4>
+                <input class="w3-input w3-border" type="text" value="-10,10" id="bounds"></div>
+            <br><br>
             <button class="w3-button w3-black w3-center w3-section" type="submit" id="graph">
                 GRAPH
             </button>
