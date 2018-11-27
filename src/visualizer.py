@@ -16,8 +16,9 @@ class Visualizer:
     def curl(self, x, y, d=0.0001):
         return round(((self.fy(x + d, y) - self.fy(x, y)) / d) - ((self.fx(x, y + d) - self.fx(x, y)) / d), 3)
 
-    def plot(self, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, head_size=0.5):
+    def plot(self, bound_x=(-10, 10), bound_y=(-10, 10), skip=1):
         c = "#0F0F0F"
+        head_size = (math.fabs(bound_x[0]) + math.fabs(bound_x[1]))/40
         for y in range(bound_y[0] - 1, bound_y[1] + 1, skip):
             for x in range(bound_x[0] - 1, bound_y[1] + 1, skip):
                 plt.scatter([x], [y], c=c, s=[10])
@@ -25,7 +26,8 @@ class Visualizer:
                           head_width=head_size, head_length=head_size, color=c)
         return plt
 
-    def plot_color(self, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0, head_size=0.5):
+    def plot_color(self, bound_x=(-10, 10), bound_y=(-10, 10), skip=1, prop=0):
+        head_size = (math.fabs(bound_x[0]) + math.fabs(bound_x[1])) / 40
         for y in range(bound_y[0], bound_y[1] + 1, skip):
             for x in range(bound_x[0], bound_y[1] + 1, skip):
                 v = int(math.sqrt(x ** 2 + y ** 2) / 10 ** prop)
@@ -40,7 +42,8 @@ class Visualizer:
                               head_width=head_size, head_length=head_size, color=c)
                 except ZeroDivisionError:
                     try:
-                        plt.arrow(x, y, 0, y_val/math.fabs(y_val), head_width=head_size, head_length=head_size, color=c)
+                        plt.arrow(x, y, 0, y_val / math.fabs(y_val), head_width=head_size, head_length=head_size,
+                                  color=c)
                     except ZeroDivisionError:
                         plt.scatter([x], [y], color=c, s=[10])
         return plt
