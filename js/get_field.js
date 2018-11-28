@@ -20,7 +20,7 @@ button2.addEventListener("click", e => {
     moreText.style.display = "none";
   } else {
     dots.style.display = "none";
-    btnText.innerHTML = "^ Advanced";
+    btnText.innerHTML = "Advanced";
     moreText.style.display = "inline";
   }
 });
