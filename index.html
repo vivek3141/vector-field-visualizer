@@ -16,6 +16,8 @@
         <div class="w3-half w3-row-padding">
             <img src="img/vector_field.png" id="img">
         </div>
+        <span id="dots"></span>
+
         <div class="w3-half w3-row-padding">
             <div class="w3-half">
                 <h4>F<sub>x</sub></h4>
@@ -26,17 +28,22 @@
                 <input class="w3-input w3-border" type="text" value="sin(y)" id="Fy">
             </div>
 
-            <div class="w3-half w3-row-padding">
-                <h4>Skip</h4>
-                <input class="w3-input w3-border" type="text" value="1" id="skip">
+            <div id="more">
+                <div class="w3-half w3-row-padding">
+                    <h4>Skip</h4>
+                    <input class="w3-input w3-border" type="text" value="1" id="skip">
+                </div>
+                <div class="w3-half w3-row-padding"><h4>Bounds</h4>
+                    <input class="w3-input w3-border" type="text" value="-10,10" id="bounds"></div>
             </div>
-            <div class="w3-half w3-row-padding"><h4>Bounds</h4>
-                <input class="w3-input w3-border" type="text" value="-10,10" id="bounds"></div>
         </div>
+        <button class="w3-button w3-black w3-center w3-section" type="submit" id="read">
+                Advanced
+            </button>
         <button class="w3-button w3-black w3-center w3-section" type="submit" id="graph">
             GRAPH
         </button>
-        <h1 class="w3-center" id="loading"></h1>
+
     </div>
 </div>
 

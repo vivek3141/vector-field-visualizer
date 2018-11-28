@@ -13,7 +13,7 @@ const button2 = document.getElementById("read");
 button2.addEventListener("click", e => {
   var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
+  var btnText = document.getElementById("read");
   if (dots.style.display === "none") {
     dots.style.display = "inline";
     btnText.innerHTML = "Advanced";
