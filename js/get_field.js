@@ -16,11 +16,11 @@ button2.addEventListener("click", e => {
   var btnText = document.getElementById("myBtn");
   if (dots.style.display === "none") {
     dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
+    btnText.innerHTML = "Advanced";
     moreText.style.display = "none";
   } else {
     dots.style.display = "none";
-    btnText.innerHTML = "Read less";
+    btnText.innerHTML = "^ Advanced";
     moreText.style.display = "inline";
   }
 });
