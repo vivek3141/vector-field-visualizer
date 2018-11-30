@@ -20,6 +20,8 @@ def get_graph():
     plt.savefig("vector_field.png")
     plt.gcf().clear()
     return send_file("./vector_field.png")
+
+
 @app.route("/divcurl")
 def div_curl():
     fx = request.args.get('fx')
@@ -27,9 +29,9 @@ def div_curl():
     x = request.args.get('x')
     y = request.args.get('y')
     v = Visualizer(f_x=str(fx), f_y=str(fy))
-    div = v.div(x,y)
-    curl = v.div(x,y)
-    return "Divergence: {}<br>Curl: {}".format(div,curl)
+    div = v.div(x, y)
+    curl = v.div(x, y)
+    return "Divergence: {}<br>Curl: {}".format(div, curl)
 
 
 if __name__ == "__main__":
