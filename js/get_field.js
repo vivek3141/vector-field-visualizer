@@ -11,16 +11,25 @@ button.addEventListener("click", e => {
 });
 const button2 = document.getElementById("read");
 button2.addEventListener("click", e => {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("read");
+  const dots = document.getElementById("dots");
+  const moreText = document.getElementById("more");
   if (dots.style.display === "none") {
     dots.style.display = "inline";
-    btnText.innerHTML = "Advanced";
     moreText.style.display = "none";
   } else {
     dots.style.display = "none";
-    btnText.innerHTML = "Advanced";
+    moreText.style.display = "inline";
+  }
+});
+const button3 = document.getElementById("calc");
+button3.addEventListener("click", e => {
+  const dots = document.getElementById("dots2");
+  const moreText = document.getElementById("more2");
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
     moreText.style.display = "inline";
   }
 });
