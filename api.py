@@ -26,12 +26,12 @@ def get_graph():
 def div_curl():
     fx = request.args.get('fx')
     fy = request.args.get('fy')
-    x = request.args.get('x')
-    y = request.args.get('y')
+    x = float(request.args.get('x'))
+    y = float(request.args.get('y'))
     v = Visualizer(f_x=str(fx), f_y=str(fy))
     div = v.div(x, y)
     curl = v.div(x, y)
-    return "Divergence: {}<br>Curl: {}".format(div, curl)
+    return "Divergence: {}<br>Curl: {}".format(str(div), str(curl))
 
 
 if __name__ == "__main__":
