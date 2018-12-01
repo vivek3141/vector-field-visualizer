@@ -43,12 +43,8 @@ button2.addEventListener("click", e => {
 const button3 = document.getElementById("calc");
 button3.addEventListener("click", e => {
     console.log("HI");
-    const dots = document.getElementById("dots2");
     const moreText = document.getElementById("more2");
-    if (dots.style.display === "none") {
-        dots.style.display = "inline";
-        moreText.style.display = "none";
-    }
+    moreText.style.display = "inline";
     const x = document.getElementById("x").value;
     const y = document.getElementById("y").value;
     const fx = document.getElementById("Fx").value;
