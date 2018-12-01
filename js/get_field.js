@@ -42,6 +42,7 @@ button2.addEventListener("click", e => {
 
 const button3 = document.getElementById("calc");
 button3.addEventListener("click", e => {
+    console.log("HI");
     const dots = document.getElementById("dots2");
     const moreText = document.getElementById("more2");
     if (dots.style.display === "none") {
@@ -53,6 +54,7 @@ button3.addEventListener("click", e => {
     const fx = document.getElementById("Fx").value;
     const fy = document.getElementById("Fy").value;
     const url = "https://vector-field.herokuapp.com/divcurl?fx=" + fx + "&fy=" + fy + "&x=" + x + "&y=" + y;
+    console.log(url);
     let request = makeHttpObject();
     request.open("GET", url, true);
     request.send(null);
