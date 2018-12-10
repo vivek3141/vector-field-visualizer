@@ -48,8 +48,8 @@ button3.addEventListener("click", e => {
     moreText.style.display = "inline";
     const x = document.getElementById("x").value;
     const y = document.getElementById("y").value;
-    const fx = document.getElementById("Fx").value;
-    const fy = document.getElementById("Fy").value;
+    const fx = document.getElementById("Fx").value.replace("+","@");
+    const fy = document.getElementById("Fy").value.replace("+","@");
     const url = "https://vector-field.herokuapp.com/divcurl?fx=" + fx + "&fy=" + fy + "&x=" + x + "&y=" + y;
     console.log(url);
     let request = makeHttpObject();
