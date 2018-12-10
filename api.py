@@ -27,14 +27,17 @@ def get_graph():
 
 @app.route("/divcurl")
 def div_curl():
-    fx = request.args.get('fx').replace("@", "+")
-    fy = request.args.get('fy').replace("@", "+")
-    x = float(request.args.get('x'))
-    y = float(request.args.get('y'))
-    v = Visualizer(f_x=str(fx), f_y=str(fy))
-    div = v.div(x, y)
-    curl = v.curl(x, y)
-    return "Divergence: {}<br>Curl: {}".format(str(div), str(curl))
+    try:
+        fx = request.args.get('fx').replace("@", "+")
+        fy = request.args.get('fy').replace("@", "+")
+        x = float(request.args.get('x'))
+        y = float(request.args.get('y'))
+        v = Visualizer(f_x=str(fx), f_y=str(fy))
+        div = v.div(x, y)
+        curl = v.curl(x, y)
+        return "Divergence: {}<br>Curl: {}".format(str(div), str(curl))
+    except:
+        return "Error: Check your equations"
 
 
 if __name__ == "__main__":
