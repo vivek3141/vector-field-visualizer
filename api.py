@@ -11,15 +11,18 @@ CORS(app)
 
 @app.route('/')
 def get_graph():
-    fx = request.args.get('fx').replace("@","+")
-    fy = request.args.get('fy').replace("@","+")
-    skip = request.args.get('skip')
-    bounds = list(map(int, request.args.get('bounds').split(",")))
-    v = Visualizer(f_x=str(fx), f_y=str(fy))
-    plt = v.plot_color(skip=float(skip), bound=bounds)
-    plt.savefig("vector_field.png")
-    plt.gcf().clear()
-    return send_file("./vector_field.png")
+    try:
+        fx = request.args.get('fx').replace("@","+")
+        fy = request.args.get('fy').replace("@","+")
+        skip = request.args.get('skip')
+        bounds = list(map(int, request.args.get('bounds').split(",")))
+        v = Visualizer(f_x=str(fx), f_y=str(fy))
+        plt = v.plot_color(skip=float(skip), bound=bounds)
+        plt.savefig("vector_field.png")
+        plt.gcf().clear()
+        return send_file("./vector_field.png")
+    except:
+        return send_file("./img/error.jpg")
 
 
 @app.route("/divcurl")
