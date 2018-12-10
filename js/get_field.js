@@ -19,8 +19,8 @@ const button = document.getElementById("graph");
 button.addEventListener("click", e => {
     document.getElementById("img").src = "";
     document.getElementById("img").src="./img/loading.jpg";
-    const fx = document.getElementById("Fx").value;
-    const fy = document.getElementById("Fy").value;
+    const fx = document.getElementById("Fx").value.replace("+","@");
+    const fy = document.getElementById("Fy").value.replace("+","@");
     const skip = document.getElementById("skip").value;
     const bounds = document.getElementById("bounds").value;
     const url = "https://vector-field.herokuapp.com/?fx=" + fx + "&fy=" + fy + "&skip=" + skip + "&bounds=" + bounds;

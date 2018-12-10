@@ -11,8 +11,8 @@ CORS(app)
 
 @app.route('/')
 def get_graph():
-    fx = request.args.get('fx')
-    fy = request.args.get('fy')
+    fx = request.args.get('fx').replace("@","+")
+    fy = request.args.get('fy').replace("@","+")
     skip = request.args.get('skip')
     bounds = list(map(int, request.args.get('bounds').split(",")))
     v = Visualizer(f_x=str(fx), f_y=str(fy))
