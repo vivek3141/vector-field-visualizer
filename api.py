@@ -39,6 +39,10 @@ def div_curl():
     except:
         return "Error: Check your equations"
 
+@app.route("/wakemydyno.txt")
+def wakemydyno():
+    return ""
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
