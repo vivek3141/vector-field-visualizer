@@ -29,8 +29,6 @@ Set mode to BLACK to use actual length.
 <img src="https://raw.githubusercontent.com/vivek3141/vector-field-visualizer/master/img/blackwhite.jpg">
 #### --skip
 Skip is the space between each vector for X and Y. Eg. `--skip 2`
-#### --boundx and --boundy
+#### --bound
 Set for bounds of X and Y. Eg. `--boundx "-10,10"`
-#### --head_size
-Set for changing the size of the head of each vector. Eg. `--head_size 0.5`
 
