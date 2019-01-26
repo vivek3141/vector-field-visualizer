@@ -50,7 +50,7 @@ button3.addEventListener("click", e => {
     const y = document.getElementById("y").value;
     const fx = document.getElementById("Fx").value;
     const fy = document.getElementById("Fy").value;
-    const url = "https://vectorfield.pythonanywhere.com/divcurl?fx=" + fx + "&fy=" + fy + "&x=" + x + "&y=" + y;
+    const url = "https://vectorfield.pythonanywhere.com/divcurl?fx=" + encodeURIComponent(fx) + "&fy=" + encodeURIComponent(fy) + "&x=" + x + "&y=" + y;
     console.log(url);
     let request = makeHttpObject();
     request.open("GET", url, true);
