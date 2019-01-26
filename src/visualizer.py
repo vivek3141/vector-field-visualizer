@@ -37,8 +37,11 @@ class Visualizer:
                 index = len(self.color_list) - 1 if v > len(self.color_list) - 1 else v
                 c = self.color_list[index]
                 plt.scatter([x], [y], c=c, s=[5/head_size])
-                x_val = float(self.fx(float(x), float(y)))
-                y_val = float(self.fy(float(x), float(y)))
+                try:
+                    x_val = float(self.fx(float(x), float(y)))
+                    y_val = float(self.fy(float(x), float(y)))
+                except ValueError:
+                    continue
                 try:
                     angle = math.atan(y_val / x_val) if x_val > 0 else (math.atan(y_val / x_val) + math.pi)
                     plt.arrow(x, y, math.cos(angle), math.sin(angle),

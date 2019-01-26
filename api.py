@@ -21,7 +21,8 @@ def get_graph():
         plt.savefig("vector_field.png")
         plt.gcf().clear()
         return send_file("./vector_field.png")
-    except:
+    except Exception as e:
+        print(e)
         return send_file("./img/error.jpg")
 
 
