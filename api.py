@@ -28,8 +28,8 @@ def get_graph():
 @app.route("/divcurl")
 def div_curl():
     try:
-        fx = repr(request.args.get('fx'))
-        fy = repr(request.args.get('fy'))
+        fx = repr(request.args.get('fx'))[1:-1]
+        fy = repr(request.args.get('fy'))[1:-1]
         x = float(request.args.get('x'))
         y = float(request.args.get('y'))
         v = Visualizer(f_x=str(fx), f_y=str(fy))
