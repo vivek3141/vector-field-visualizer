@@ -23,7 +23,7 @@ button.addEventListener("click", e => {
     const fy = document.getElementById("Fy").value;
     const skip = document.getElementById("skip").value;
     const bounds = document.getElementById("bounds").value;
-    const url = "http://127.0.0.1:5000/?fx=" + encodeURIComponent(fx) + "&fy=" + encodeURIComponent(fy) + "&skip=" + skip + "&bounds=" + bounds;
+    const url = "http://http://vectorfield.pythonanywhere.com/?fx=" + encodeURIComponent(fx) + "&fy=" + encodeURIComponent(fy) + "&skip=" + skip + "&bounds=" + bounds;
     console.log(url);
     document.getElementById("img").src = url;
 });
