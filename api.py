@@ -12,8 +12,8 @@ CORS(app)
 @app.route('/')
 def get_graph():
     try:
-        fx = repr(request.args.get('fx'))
-        fy = repr(request.args.get('fy'))
+        fx = repr(request.args.get('fx'))[1:-1]
+        fy = repr(request.args.get('fy'))[1:-1]
         skip = request.args.get('skip')
         bounds = list(map(int, request.args.get('bounds').split(",")))
         v = Visualizer(f_x=str(fx), f_y=str(fy))
@@ -21,7 +21,7 @@ def get_graph():
         plt.savefig("vector_field.png")
         plt.gcf().clear()
         return send_file("./vector_field.png")
-    except IndexError as e:
+    except IndexError:
         print(e)
         return send_file("./img/error.jpg")
 

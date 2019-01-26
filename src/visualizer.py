@@ -11,8 +11,9 @@ class Visualizer:
                            '#00eae2', '#0094ea', "#2700ea", '#bf00ea', '#ea0078']
 
         # Create the functions
-        self.fx = eval("lambda x,y: " + str(f_x))
-        self.fy = eval("lambda x,y: " + str(f_y))
+        self.fx = eval("lambda x,y: " + f_x)
+        print(self.fx(0,0))
+        self.fy = eval("lambda x,y: " + f_y)
 
     def div(self, x, y, d=0.0001):
         return round(((self.fx(x + d, y) - self.fx(x, y)) / d) + ((self.fy(x, y + d) - self.fy(x, y)) / d), 3)
@@ -49,7 +50,7 @@ class Visualizer:
                     y_val = float(self.fy(float(x), float(y)))
 
                 # Make sure no Math Domain Error occurs, Eg. log(x)
-                except ValueError:
+                except IndexError:
                     plt.scatter([x], [y], c="WHITE",
                                 s=[5 / head_size])  # Make sure that it's not stretched by missing points
                     continue
