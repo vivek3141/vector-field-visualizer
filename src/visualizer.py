@@ -12,7 +12,6 @@ class Visualizer:
 
         # Create the functions
         self.fx = eval("lambda x,y: " + f_x)
-        print(self.fx(0,0))
         self.fy = eval("lambda x,y: " + f_y)
 
     def div(self, x, y, d=0.0001):
