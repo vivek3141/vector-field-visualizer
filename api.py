@@ -12,8 +12,8 @@ CORS(app)
 @app.route('/')
 def get_graph():
     try:
-        fx = request.args.get('fx').replace("@","+")
-        fy = request.args.get('fy').replace("@","+")
+        fx = repr(request.args.get('fx'))
+        fy = repr(request.args.get('fy'))
         skip = request.args.get('skip')
         bounds = list(map(int, request.args.get('bounds').split(",")))
         v = Visualizer(f_x=str(fx), f_y=str(fy))
@@ -21,7 +21,7 @@ def get_graph():
         plt.savefig("vector_field.png")
         plt.gcf().clear()
         return send_file("./vector_field.png")
-    except Exception as e:
+    except IndexError as e:
         print(e)
         return send_file("./img/error.jpg")
 
@@ -29,8 +29,8 @@ def get_graph():
 @app.route("/divcurl")
 def div_curl():
     try:
-        fx = request.args.get('fx').replace("@", "+")
-        fy = request.args.get('fy').replace("@", "+")
+        fx = repr(request.args.get('fx'))
+        fy = repr(request.args.get('fy'))
         x = float(request.args.get('x'))
         y = float(request.args.get('y'))
         v = Visualizer(f_x=str(fx), f_y=str(fy))

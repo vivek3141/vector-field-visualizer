@@ -19,11 +19,11 @@ const button = document.getElementById("graph");
 button.addEventListener("click", e => {
     document.getElementById("img").src = "";
     document.getElementById("img").src="./img/loading.jpg";
-    const fx = document.getElementById("Fx").value.replace("+","@");
-    const fy = document.getElementById("Fy").value.replace("+","@");
+    const fx = document.getElementById("Fx").value;
+    const fy = document.getElementById("Fy").value;
     const skip = document.getElementById("skip").value;
     const bounds = document.getElementById("bounds").value;
-    const url = "https://vectorfield.pythonanywhere.com/?fx=" + fx + "&fy=" + fy + "&skip=" + skip + "&bounds=" + bounds;
+    const url = "http://127.0.0.1:5000/?fx=" + encodeURIComponent(fx) + "&fy=" + encodeURIComponent(fy) + "&skip=" + skip + "&bounds=" + bounds;
     console.log(url);
     document.getElementById("img").src = url;
 });
@@ -48,8 +48,8 @@ button3.addEventListener("click", e => {
     moreText.style.display = "inline";
     const x = document.getElementById("x").value;
     const y = document.getElementById("y").value;
-    const fx = document.getElementById("Fx").value.replace("+","@");
-    const fy = document.getElementById("Fy").value.replace("+","@");
+    const fx = document.getElementById("Fx").value;
+    const fy = document.getElementById("Fy").value;
     const url = "https://vectorfield.pythonanywhere.com/divcurl?fx=" + fx + "&fy=" + fy + "&x=" + x + "&y=" + y;
     console.log(url);
     let request = makeHttpObject();
