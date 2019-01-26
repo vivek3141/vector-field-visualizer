@@ -13,7 +13,7 @@ OR
 ## Usage
 ```bash
 python3 main.py [fx] [fy] --mode [mode] --skip [skip] \
---boundx [boundx] --boundy [boundy] --prop [prop] --head_size [head_size]
+--bound [bound] --prop [prop]
 ```
 #### --mode
 Set mode to COLOR to use color to portray length instead of actual length.
