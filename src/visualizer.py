@@ -50,6 +50,8 @@ class Visualizer:
 
                 # Make sure no Math Domain Error occurs, Eg. log(x)
                 except ValueError:
+                    plt.scatter([x], [y], c="WHITE",
+                                s=[5 / head_size])  # Make sure that it's not stretched by missing points
                     continue
 
                 # Place the beginning dot of the arrow
