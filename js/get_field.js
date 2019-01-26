@@ -23,7 +23,7 @@ button.addEventListener("click", e => {
     const fy = document.getElementById("Fy").value.replace("+","@");
     const skip = document.getElementById("skip").value;
     const bounds = document.getElementById("bounds").value;
-    const url = "https://vectorfield.pythonanywhere.com//?fx=" + fx + "&fy=" + fy + "&skip=" + skip + "&bounds=" + bounds;
+    const url = "https://vectorfield.pythonanywhere.com/?fx=" + fx + "&fy=" + fy + "&skip=" + skip + "&bounds=" + bounds;
     console.log(url);
     document.getElementById("img").src = url;
 });
@@ -50,7 +50,7 @@ button3.addEventListener("click", e => {
     const y = document.getElementById("y").value;
     const fx = document.getElementById("Fx").value.replace("+","@");
     const fy = document.getElementById("Fy").value.replace("+","@");
-    const url = "https://vector-field.herokuapp.com/divcurl?fx=" + fx + "&fy=" + fy + "&x=" + x + "&y=" + y;
+    const url = "https://vectorfield.pythonanywhere.com/divcurl?fx=" + fx + "&fy=" + fy + "&x=" + x + "&y=" + y;
     console.log(url);
     let request = makeHttpObject();
     request.open("GET", url, true);
