@@ -49,7 +49,7 @@ class Visualizer:
                     y_val = float(self.fy(float(x), float(y)))
 
                 # Make sure no Math Domain Error occurs, Eg. log(x)
-                except IndexError:
+                except ValueError:
                     plt.scatter([x], [y], c="WHITE",
                                 s=[5 / head_size])  # Make sure that it's not stretched by missing points
                     continue

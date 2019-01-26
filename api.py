@@ -36,7 +36,7 @@ def div_curl():
         div = v.div(x, y)
         curl = v.curl(x, y)
         return "Divergence: {}<br>Curl: {}".format(str(div), str(curl))
-    except IndexError:
+    except:
         return "Error: Check your equations"
 
 
