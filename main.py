@@ -1,5 +1,5 @@
 import argparse
-from visualizer import Visualizer
+from src.visualizer import Visualizer
 
 parser = argparse.ArgumentParser(description='Run the program')
 parser.add_argument('fx', metavar='fx', type=str, help='X Function')
